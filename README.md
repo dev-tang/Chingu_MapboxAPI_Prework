@@ -7,7 +7,7 @@
 This web application was created for the Chingu Voyage 20 pre-work. 
 It pulls data from [MapBox's API](https://docs.mapbox.com/api/)
 
-#### Live Version : 
+#### Live Version : https://dev-tang.github.io/Chingu_MapboxAPI_Prework/
 
 ## Features
 
