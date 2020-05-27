@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link href="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css" rel="stylesheet" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<title>My Neighborhood</title>
+	</head>
+	<body>
+		<div id="map"></div>
+
+		<div class="topnav">
+			<a href="#home"></a>
+			<div class="container" id="container">
+				<h1>My Neighborhood</h1>
+				<div id="searchWrapper">
+					<input type="text" name="searchBar" id="searchBar" placeholder="Filter Locations" />
+				</div>
+				<ul id="locationList"></ul>
+			</div>
+			<!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+		<script src="https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
