@@ -1,6 +1,6 @@
 # Chingu Mapbox API Prework
 
-![Image of Project](https://i.imgur.com/kDSlPeq.png)
+![Gif Image of Project](https://i.gyazo.com/1abc6f1b468613ae0bd1e5bf53cce614.gif)
 
 ## Overview
 
