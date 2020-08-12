@@ -1,6 +1,7 @@
-//GEOJSON FEATURES
-mapboxgl.accessToken = 'pk.eyJ1IjoicG90YXRvYnVybnMiLCJhIjoiY2thYWg5aG90MDIxYjJzbzEzcjV5emJydiJ9.JQxucnVy4mrRmzcLH0K0bw';
-var places = {
+//GEOJSON FEATURES GitHubViewOnly Github: @dev-tang
+mapboxgl.accessToken = 'pk.eyJ1IjoicG90YXRvYnVybnMiLCJhIjoiY2tkcnRtajR5MWl2dDJzcXFnamF5dWhhYyJ9._GeB1sDQUe912DYgD1PgkQ';
+
+const places = {
 	type: 'FeatureCollection',
 	features: [
 		{
@@ -75,8 +76,8 @@ let locations = [];
 searchBar.addEventListener('keyup', (e) => {
 	const searchString = e.target.value.toLowerCase();
 	const filteredLocations = locations.filter((location) => {
-		var yo = location.properties.title.toLowerCase().includes(searchString);
-		return yo;
+		let filteredMarkers = location.properties.title.toLowerCase().includes(searchString);
+		return filteredMarkers;
 	});
 	displayCharacters(filteredLocations);
 });
@@ -107,9 +108,9 @@ loadCharacters();
 
 ///////////////////////
 
-var layerIDs = []; // Will contain a list used to filter against.
-var filterInput = document.getElementById('searchBar');
-var map = new mapboxgl.Map({
+const layerIDs = []; // Will contain a list used to filter against.
+const filterInput = document.getElementById('searchBar');
+const map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/potatoburns/ckaahqrjq121g1imgln6x2rc5',
 	center: [-118.308792, 34.063164],
@@ -126,8 +127,8 @@ map.on('load', function () {
 		});
 
 		places.features.forEach(function (feature) {
-			var symbol = feature.properties['title'];
-			var layerID = symbol;
+			const symbol = feature.properties['title'];
+			const layerID = symbol;
 
 			// Add a layer for this symbol type if it hasn't been added already.
 			if (!map.getLayer(layerID)) {
@@ -148,7 +149,7 @@ map.on('load', function () {
 
 		filterInput.addEventListener('keyup', function (e) {
 			layerIDs.forEach(function (layerID) {
-				var value = e.target.value.toLowerCase();
+				let value = e.target.value.toLowerCase();
 				map.setLayoutProperty(
 					layerID,
 					'visibility',
@@ -162,10 +163,10 @@ map.on('load', function () {
 	places.features.forEach(function (marker) {
 		// create a HTML element for each feature
 
-		var el = document.createElement('div');
-		el.className = 'marker';
+		const div = document.createElement('div');
+		div.className = 'marker';
 
-		new mapboxgl.Marker(el)
+		new mapboxgl.Marker(div)
 			.setLngLat(marker.geometry.coordinates)
 			.setPopup(
 				new mapboxgl.Popup({ closeOnMove: true, closeButton: false, offset: 25 }) // add popups
@@ -181,10 +182,10 @@ map.on('load', function () {
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function myFunction() {
-	var x = document.getElementById('container');
-	if (x.style.display === 'block') {
-		x.style.display = 'none';
+	const container = document.getElementById('container');
+	if (container.style.display === 'block') {
+		container.style.display = 'none';
 	} else {
-		x.style.display = 'block';
+		container.style.display = 'block';
 	}
 }
